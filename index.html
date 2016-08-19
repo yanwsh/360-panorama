@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>360 panorama</title>
+    <style>
+        .panorama_wrapper{
+            position: relative;
+            max-width: 960px;
+            width: 100%;
+        }
+        .panorama_container{
+            padding-top: 56.25%;
+        }
+
+        #asset, .panorama_container canvas{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="panorama_wrapper">
+    <div class="panorama_container">
+        <img id="asset" src="assets/1.jpg" />
+    </div>
+</div>
+
+<script src="/node_modules/three/build/three.js"></script>
+<script src="/dist/360-panorama.js"></script>
+<script type="text/javascript">
+    (function () {
+        ThreeSixtyPanorama(document.getElementById("asset"), {});
+    })();
+</script>
+</body>
+</html>

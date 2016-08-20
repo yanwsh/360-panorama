@@ -13,6 +13,10 @@
             padding-top: 56.25%;
         }
 
+        .panorama_container img{
+            visibility: hidden;
+        }
+
         #asset, .panorama_container canvas{
             position: absolute;
             width: 100%;
@@ -35,7 +39,10 @@
 <script src="/dist/360-panorama.js"></script>
 <script type="text/javascript">
     (function () {
-        ThreeSixtyPanorama(document.getElementById("asset"), {});
+        ThreeSixtyPanorama(document.getElementById("asset"), {
+            clickAndDrag: true,
+            autoMobileOrientation: true
+        });
     })();
 </script>
 </body>

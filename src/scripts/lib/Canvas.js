@@ -1,7 +1,7 @@
 /**
  * Created by wensheng.yan on 8/19/16.
  */
-import Util from 'Util';
+import Util from './Util';
 
 class Canvas {
     constructor(element, options){
@@ -25,6 +25,7 @@ class Canvas {
         this.renderer.setClearColor(0x000000, 1);
 
         this.texture = new THREE.Texture(element);
+        this.texture.needsUpdate = true;
 
         element.style.display = "none";
 
@@ -281,7 +282,6 @@ class Canvas {
     }
 
     onMobile() {
-        this.isOnMobile = true;
         if (this.settings.autoMobileOrientation)
             window.addEventListener('devicemotion', this.handleMobileOrientation.bind(this));
     }

@@ -60,9 +60,13 @@ function insertAfter(newElement,targetElement) {
 }
 
 var ThreeSixtyPanorama = function(element, options){
+    const runOnMobile = (util.mobileAndTabletcheck());
     options = Object.assign(defaults, options);
     var canvas = new Canvas(element, options);
     insertAfter(canvas.el(), element);
+    if(runOnMobile){
+        canvas.onMobile();
+    }
 };
 
 window.ThreeSixtyPanorama = ThreeSixtyPanorama;
